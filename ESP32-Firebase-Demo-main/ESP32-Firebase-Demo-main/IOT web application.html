@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Device Control with Firebase</title>
+  <script type="module">
+    // Import Firebase SDKs
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
+    import { getDatabase, ref, set, update } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-database.js";
+
+    // Firebase Configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyDfW8JN0R6h60pAH2XqGjF94AroKMvEKK8",
+      authDomain: "home-automation-system-253a5.firebaseapp.com",
+      databaseURL: "https://home-automation-system-253a5-default-rtdb.firebaseio.com",
+      projectId: "home-automation-system-253a5",
+      storageBucket: "home-automation-system-253a5.firebasestorage.app",
+      messagingSenderId: "204966890325",
+      appId: "1:204966890325:web:3d56024ab7f45c7d007ddc",
+      measurementId: "G-FQ2R55SZG5"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const database = getDatabase(app);
+
+    // Functions to Control Devices
+    function controlDevice(device, state) {
+      const updates = {};
+      updates[`/devices/${device}`] = state;
+      update(ref(database), updates)
+        .then(() => {
+          alert(`${device} turned ${state}`);
+        })
+        .catch((error) => {
+          alert("Error: " + error.message);
+        });
+    }
+
+    // Voice Recording Placeholder Function
+    function startRecording() {
+      alert('Voice recording started (functionality not implemented)');
+    }
+  </script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #007bff;
+    }
+
+    div {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    h3 {
+      margin-bottom: 10px;
+      color: #495057;
+    }
+
+    button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      margin: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    button:active {
+      background-color: #003f7f;
+    }
+
+    button[disabled] {
+      background-color: #6c757d;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Device Control</h1>
+
+    <!-- Fan Control -->
+    <div>
+      <h3>Fan</h3>
+      <button onclick="controlDevice('fan', 'on')">ON</button>
+      <button onclick="controlDevice('fan', 'off')">OFF</button>
+    </div>
+
+    <!-- Light Control -->
+    <div>
+      <h3>Light</h3>
+      <button onclick="controlDevice('light', 'on')">ON</button>
+      <button onclick="controlDevice('light', 'off')">OFF</button>
+    </div>
+
+    <!-- AC Control -->
+    <div>
+      <h3>Air Conditioner</h3>
+      <button onclick="controlDevice('ac', 'on')">ON</button>
+      <button onclick="controlDevice('ac', 'off')">OFF</button>
+    </div>
+
+    <!-- Socket Control -->
+    <div>
+      <h3>Socket</h3>
+      <button onclick="controlDevice('socket', 'on')">ON</button>
+      <button onclick="controlDevice('socket', 'off')">OFF</button>
+    </div>
+
+    <!-- Voice Recording -->
+    <div>
+      <button onclick="startRecording()">🎙️ Start Recording</button>
+    </div>
+  </div>
+</body>
+</html>
