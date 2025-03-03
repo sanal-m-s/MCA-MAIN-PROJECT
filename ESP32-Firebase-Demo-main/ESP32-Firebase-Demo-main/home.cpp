@@ -1,6 +1,6 @@
 #include <ESP8266WiFi.h>
 #include <FirebaseArduino.h>
-#define FIREBASE_HOST "home-automation-system-253a5-default-rtdb.firebaseio.com"           // Your Firebase Project URL 
+#define FIREBASE_HOST "home-automation-system-253a5-default-rtdb.firebaseio.com"           // Your Firebase Project URL  
 #define FIREBASE_AUTH "UVOaNN1Fs6jVfthVX9Ubc8wvVEjMimiAHamtXm5w"         // Your Firebase Database Secret
 #define WIFI_SSID "iphone"           // your WiFi SSID
 #define WIFI_PASSWORD "**********"             // your WiFi PASSWORD
