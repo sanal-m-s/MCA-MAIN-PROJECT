@@ -1,24 +1,3 @@
-/**********************************************************************************
- *  TITLE: IoT-based Water Level Indicator using NodeMCU, Ultrasonic Sensor & Blynk with 0.96" OLED
- *  Click on the following links to learn more. 
- *  YouTube Video: https://youtu.be/NHxnWQF2504
- *  Related Blog : https://iotcircuithub.com/esp8266-projects/
- *  
- *  This code is provided free for project purpose and fair use only.
- *  Please do mail us to techstudycell@gmail.com if you want to use it commercially.
- *  Copyrighted © by Tech StudyCell
- *  
- *  Preferences--> Aditional boards Manager URLs : 
- *  https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_dev_index.json, http://arduino.esp8266.com/stable/package_esp8266com_index.json
- *  
- *  Download Board ESP8266 (3.1.1) : https://github.com/espressif/arduino-esp32
- *
- *  Download the libraries 
- *  Blynk Library (1.1.0):  https://github.com/blynkkk/blynk-library
- *  Adafruit_SSD1306 Library (2.5.7): https://github.com/adafruit/Adafruit_SSD1306
- *  AceButton Library (1.9.2): https://github.com/bxparks/AceButton
- **********************************************************************************/
- 
 /* Fill-in your Template ID (only if using Blynk.Cloud) */
 #define BLYNK_TEMPLATE_ID "TMPL3_9iCyAAJ"
 #define BLYNK_TEMPLATE_NAME "ESP8266 Water Level"
