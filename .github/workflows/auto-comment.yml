@@ -1,26 +1,27 @@
-name: Auto Comment Bot
+name: Daily Auto Commit
 
 on:
-  issues:
-    types: [opened]
-  pull_request:
-    types: [opened]
+  schedule:
+    - cron: "0 0 * * *" # Runs every day at midnight UTC
+  workflow_dispatch: # Allows manual triggering
 
 jobs:
-  comment:
+  auto-commit:
     runs-on: ubuntu-latest
     steps:
-      - name: Comment on Issue or PR
-        uses: actions/github-script@v6
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            const issue = context.payload.issue || context.payload.pull_request;
-            const number = issue.number;
-            const repo = context.repo;
-            await github.rest.issues.createComment({
-              owner: repo.owner,
-              repo: repo.repo,
-              issue_number: number,
-              body: "🚀 Thanks for your contribution! A team member will review this soon. 😊"
-            });
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      
+      - name: Update File with Timestamp
+        run: |
+          echo "Last update: $(date)" > update.log
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "🤖 Auto update: $(date)"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
