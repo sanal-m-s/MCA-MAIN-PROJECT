@@ -7,7 +7,7 @@
 #include <ESP8266WiFi.h>
 #include <BlynkSimpleEsp8266.h>
 #include <DHT.h>
-#define DHTPIN D5     // Digital pin connected to the DHT sensor
+#define DHTPIN D5     // Digital pin connected to the DHT sensor 
 
 // Uncomment whatever type you're using!
 #define DHTTYPE DHT11   // DHT 11
