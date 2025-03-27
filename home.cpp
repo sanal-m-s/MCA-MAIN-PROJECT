@@ -2,7 +2,7 @@
 #include <Arduino_ConnectionHandler.h>
 #include <ESP8266Wifi.h>
 
-const char DEVICE_LOGIN_NAME[]  = "66eec471-6e35-405b-9d01-958a0ef30ce2"; //Enter DEVICE ID
+const char DEVICE_LOGIN_NAME[]  = "66eec471-6e35-405b-9d01-958a0ef30ce2"; //Enter DEVICE ID 
 
 const char SSID[]               = "hp";    //Enter WiFi SSID (name)
 const char PASS[]               = "**********";    //Enter WiFi password 
