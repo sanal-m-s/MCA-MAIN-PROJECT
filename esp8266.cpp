@@ -6,7 +6,7 @@
  *  by Tech StudyCell
  *  Preferences--> Aditional boards Manager URLs :  
  *  https://dl.espressif.com/dl/package_esp32_index.json, http://arduino.esp8266.com/stable/package_esp8266com_index.json
- *  
+ *   
  *  Download Board ESP8266 NodeMCU : https://github.com/esp8266/Arduino
  *  Download the libraries
  *  ArduinoIoTCloud Library with all the dependencies
